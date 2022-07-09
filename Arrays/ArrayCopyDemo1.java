@@ -20,7 +20,7 @@ public class ArrayCopyDemo1 {
         int[] copyTo2 = new int[7];
         int[] copyFrom3 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 133, 14};
         int[] copyTo3 = new int[7];
-        arraycopy(copyFrom2, 7, copyTo2, 0, 8);
+        arraycopy(copyFrom2, 14, copyTo2, 0, 3);
 
     }
 
@@ -30,9 +30,16 @@ public class ArrayCopyDemo1 {
         int limitValue1;
         int limitValue2;
         boolean myResponse;
-
-        limitValue1 = source.length - srcIndex - 1;
-        limitValue2 = dest.length - destIndex - 1;
+        if (srcIndex > source.length - 1) {
+            System.out.println("nesprávne zadanie");
+            return false;
+        }
+        if (destIndex > dest.length - 1) {
+            System.out.println("nesprávne zadanie");
+            return false;
+        }
+        limitValue1 = source.length - srcIndex + 1;
+        limitValue2 = dest.length - destIndex + 1;
         if (limitValue2 >= limitValue1 && length < limitValue1) {
             for (int i = 0; i < length; i++) {
                 dest[destIndex + i] = source[srcIndex + i];
