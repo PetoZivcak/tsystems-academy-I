@@ -5,16 +5,16 @@ public class Line extends Shape {
 
     private final Point to;
 
-    public Line(Point from, Point to) {
-        this.from = from;
-        this.to = to;
-    }
+//    public Line(Point from, Point to) {
+//        this.from = from;
+//        this.to = to;
+//    }
 
-    public Line(Point from, Point to, int color) {
-        super(color);
-        this.from = from;
-        this.to = to;
-    }
+//    public Line(Point from, Point to, int color) {
+//        super(color);
+//        this.from = from;
+//        this.to = to;
+//    }
 
     public Point getFrom() {
         return from;

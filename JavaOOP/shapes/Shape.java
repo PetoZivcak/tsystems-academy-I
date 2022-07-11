@@ -1,13 +1,14 @@
 package shapes;
 
 public abstract class Shape {
-    private int color;
+    private char color;
 
-    public Shape() {
-        this(0);
-    }
+//    public Shape() {
+//
+//        this();
+//    }
 
-    public Shape(int color) {
+    public Shape(char color) {
         this.color = color;
     }
 
@@ -17,9 +18,9 @@ public abstract class Shape {
         return color;
     }
 
-    public void setColor(int color) {
-        this.color = color;
-    }
+//    public void setColor(int color) {
+//        this.color = color;
+//    }
 
     public String toString() {
         return ": color = " + color;

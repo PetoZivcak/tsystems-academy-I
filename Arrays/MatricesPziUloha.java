@@ -1,5 +1,5 @@
 
-public class MatricesPZI1 {
+public class MatricesPziUloha {
     public static void main(String[] args) {
         //int[][] aMatrix = new int[4][];
         //int[][] aMatrix = new int[4][5];
@@ -7,20 +7,21 @@ public class MatricesPZI1 {
         //{null, ..., null}
         //{{0, 0, 0, 0, 0}, ..., {0, 0, 0, 0, 0}}
 
-        /*int[] myArrayA1 = {1, 2, 3, 4, 5};
-        int[] myArrayA2 = {6, 7, 8, 9, 10};
-        int[] myArrayA3 = {11, 12, 13, 14, 15};
-        int[] myArrayA4 = {16, 17, 18, 19, 20};
-        int[] myArrayA5 = {21, 22, 23, 24, 25};
-
-        int[] myArrayB1 = {1, 2, 3, 4, 5};
-        int[] myArrayB2 = {6, 7, 8, 9, 10};
-        int[] myArrayB3 = {11, 12, 13, 14, 15};
-        int[] myArrayB4 = {16, 17, 18, 19, 20};
-        int[] myArrayB5 = {21, 22, 23, 24, 25};
-        int[][] aMatrix = new int[][]{myArrayA1,myArrayA2,myArrayA3,myArrayA4,myArrayA5};
-        int[][] bMatrix = new int[][]{myArrayB1,myArrayB2,myArrayB3,myArrayB4,myArrayB5};
-      MATICE PRE SCITANIE  */
+//        int[] myArrayA1 = {1, 2, 3, 4, 5};
+//        int[] myArrayA2 = {6, 7, 8, 9, 10};
+//        int[] myArrayA3 = {11, 12, 13, 14, 15};
+//        int[] myArrayA4 = {16, 17, 18, 19, 20};
+//        int[] myArrayA5 = {21, 22, 23, 24, 25};
+//
+//        int[] myArrayB1 = {1, 2, 3, 4, 5};
+//        int[] myArrayB2 = {6, 7, 8, 9, 10};
+//        int[] myArrayB3 = {11, 12, 13, 14, 15};
+//        int[] myArrayB4 = {16, 17, 18, 19, 20};
+//        int[] myArrayB5 = {21, 22, 23, 24, 25};
+//        int[][] aMatrix = new int[][]{
+//                myArrayA1,myArrayA2,myArrayA3,myArrayA4,myArrayA5};
+//        int[][] bMatrix = new int[][]{myArrayB1,myArrayB2,myArrayB3,myArrayB4,myArrayB5};
+//      MATICE PRE SCITANIE
 
         //int[][] addition = addMatrices(aMatrix, bMatrix);
         //int[][] transposed = transpose(aMatrix);
@@ -32,7 +33,7 @@ public class MatricesPZI1 {
         int[][] forTransMatrix = new int[][]{myArrayA1,myArrayA2};
        MATICA PRE TRANSPOZICIU */
 
-        /*int[] myArrayA1 = {2, 3, 1};
+        int[] myArrayA1 = {2, 3, 1};
         int[] myArrayA2 = {4, 3, 5};
 
 
@@ -42,17 +43,21 @@ public class MatricesPZI1 {
 
         int[][] aMatrix = new int[][]{myArrayA1, myArrayA2};
         int[][] bMatrix = new int[][]{myArrayB1, myArrayB2, myArrayB3};
-          MATICE PRE NASOBENIE*/
+//          MATICE PRE NASOBENIE
 
         //print matrix
         //printMatrix(aMatrix);
         //printMatrix(bMatrix);
 
-        /*SCITANIE MATIC-PRIKAZ    printMatrix(addMatrices(aMatrix, bMatrix));*/
+//        SCITANIE MATIC-PRIKAZ    
+//    printMatrix(addMatrices(aMatrix, bMatrix));
         /*TRANSPOZICIA MATICE-PRIKAZ  printMatrix(transpose(forTransMatrix));*/
-        /*PRIKAZ PRE NASOBENIE  multiply(aMatrix, bMatrix);*/
-       /*BUBBLE SORT ARRAY int[] myBubbleArray = {8, 0, 0, 3, 15};*/
-       /*PRIKAZ PRE BUBBLESORT bubbleSort(myBubbleArray);*/
+//        PRIKAZ PRE NASOBENIE
+        multiply(aMatrix, bMatrix);
+        /*BUBBLE SORT ARRAY*/
+//        int[] myBubbleArray = {8, 0, 0, 3, 15};
+        /*PRIKAZ PRE BUBBLESORT*/
+//        bubbleSort(myBubbleArray);
     }
 
     public static int[] bubbleSort(int myArray[]) {
@@ -71,24 +76,24 @@ public class MatricesPZI1 {
                 myArray[i + 1] = myFirsValue;
                 myChecker = myArray.length + 1;
             }
-            i=i+1;
-            if (i==myArray.length-1){
-                i=0;
+            i = i + 1;
+            if (i == myArray.length - 1) {
+                i = 0;
             }
         }
-        for(int j = 0; j<myArray.length;++j)
-        {
-        System.out.println(myArray[j]);
+        for (int j = 0; j < myArray.length; ++j) {
+            System.out.println(myArray[j]);
         }
         return myArray;
-}
+    }
+
     private static int[][] multiply(int[][] matrixA, int[][] matrixB) {
         int[][] matrixC = new int[matrixB[0].length - 1][matrixA[0].length];
         int[][] nullMatrix = new int[2][2];
         int[] matrixACheck = {0, 0};
         int[] matrixBCheck = {0, 0};
         boolean multCheck = false;
-        int[][] transposedMatrixA = new int[matrixA[0].length][matrixA.length];
+        int[][] transposedMatrixA;
         matrixACheck = matrixDimensionCheck(matrixA);
         matrixBCheck = matrixDimensionCheck(matrixB);
         multCheck = multCheckDimension(matrixACheck, matrixBCheck);
@@ -122,6 +127,10 @@ public class MatricesPZI1 {
 
     public static boolean multCheckDimension(int[] matrix1, int matrix2[]) {
         boolean myResult = true;
+//        if (checkNull(myMatrix) == false) {
+//            System.out.println("Jedna z matíc je null prosím zadajte korektné matice");
+//            return false;
+//        }
         if (matrix1[0] == matrix2[1]) {
             System.out.println("Rozmery matic pre nasobenie  nie su spravne");
             myResult = false;
@@ -149,7 +158,7 @@ public class MatricesPZI1 {
         matrixACheck = matrixDimensionCheck(matrixA);
         matrixBCheck = matrixDimensionCheck(matrixB);
         addCheck = addCheckDimension(matrixACheck, matrixBCheck);
-        if (addCheck == true) {
+        if (addCheck) {
             for (int i = 0; i < matrixA.length; i++) {
                 for (int j = 0; j < matrixA[i].length; j++) {
                     matrixC[i][j] = matrixA[i][j] + matrixB[i][j];
@@ -163,6 +172,11 @@ public class MatricesPZI1 {
 
     public static boolean addCheckDimension(int[] matrix1, int matrix2[]) {
         boolean myResult = true;
+//        if (checkNull(myMatrix) == false) {
+//            System.out.println("Jedna z matíc je null prosím zadajte korektné matice");
+//            return false;
+//        }
+        ;
         if (matrix1[0] != matrix2[0] || matrix1[1] != matrix2[1]) {
             System.out.println("Rozmery matic  nie su spravne");
             myResult = false;
@@ -178,6 +192,16 @@ public class MatricesPZI1 {
         //System.out.println(myResult[0] + "," + myResult[1]);
         return myResult;
     }
+
+//    public static boolean checkNull(int[][] myArray) {
+//        for (int i = 0; i < myArray.length; i++) {
+//            if (myArray[i] == null) {
+//                return false;
+//            }
+//
+//        }
+//        return true;
+//    }
 
     public static boolean matrixDimensionRowEqualityCheck(int[][] myMatrix) {
         //skontroluje, či každé pole v dvojrozmernom p-oli má rovnakú veľkosť
